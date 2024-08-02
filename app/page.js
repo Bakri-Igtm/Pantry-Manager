@@ -4,9 +4,9 @@ import { Stack } from '@mui/material';
 import { firestore } from '@/firebase';
 import { collection, doc, getDocs, query, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { CaptureImage } from './CaptureImage.js';  // Updated import
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { classifyImage } from './classifyImage.js';  // Correct import path
+// import { CaptureImage } from './CaptureImage.js';  // Updated import
+// import CameraAltIcon from '@mui/icons-material/CameraAlt';
+//import { classifyImage } from './classifyImage.js';  // Correct import path
 
 // Define styles
 const style = {
@@ -117,19 +117,19 @@ export default function Home() {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleCapture = async (imageSrc) => {
-        try {
-          // Call classifyImage to get the item name from the image
-          const itemName = await classifyImage(imageSrc);
+  // const handleCapture = async (imageSrc) => {
+  //       try {
+  //         // Call classifyImage to get the item name from the image
+  //         const itemName = await classifyImage(imageSrc);
     
-          // Set the item name to the state and open the modal to specify the quantity
-          setItemName(itemName);
-          setCameraOpen(false);
-          handleOpen();
-        } catch (error) {
-          console.error("Error classifying image:", error);
-        }
-      };
+  //         // Set the item name to the state and open the modal to specify the quantity
+  //         setItemName(itemName);
+  //         setCameraOpen(false);
+  //         handleOpen();
+  //       } catch (error) {
+  //         console.error("Error classifying image:", error);
+  //       }
+  //     };
 
   return (
     <Box sx={containerStyle}>
@@ -214,12 +214,12 @@ export default function Home() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <IconButton
+          {/* <IconButton
             onClick={handleCameraOpen}
             sx={{ position: 'absolute', top: 8, right: 8 }}
           >
             <CameraAltIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add Item
           </Typography>
@@ -256,7 +256,7 @@ export default function Home() {
         </Box>
       </Modal>
 
-      <Modal
+      {/* <Modal
         open={cameraOpen}
         onClose={handleCameraClose}
         aria-labelledby="camera-modal-title"
@@ -265,9 +265,8 @@ export default function Home() {
         <Box sx={style}>
           <CaptureImage onCapture={handleCapture} />
         </Box>
-      </Modal>
+      </Modal> */}
 
     </Box>
   );
 }
-
