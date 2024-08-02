@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import { Button } from '@mui/material';
