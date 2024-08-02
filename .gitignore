@@ -37,3 +37,4 @@ next-env.d.ts
 
 .env
 /app/classifyImage.js
+/app/firebase.js
