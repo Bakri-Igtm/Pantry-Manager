@@ -1,3 +1,4 @@
+"use client"
 // CameraCapture.js
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
